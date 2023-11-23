@@ -5,10 +5,10 @@ Paos para levantar la app desarrollo
 ````
 docker compose up - 
 ````
- # Prima commands
+ * Prima commands
  ````
  npx prima init
- 
+
  ````
 
 

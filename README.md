@@ -1,13 +1,17 @@
 #Develoment
 Paos para levantar la app desarrollo
 
-* Levantar base de datos
+1. Levantar base de datos
 ````
 docker compose up - 
 ````
- * Prima commands
+2. Renombrar el .env.tempalte  a .env
+3.Reemplazar las variables de entorno.
+ # Prisma commands
  ````
- npx prima init
+ npx prisma init
+ npx prisma migrate dev
+ npx prisma generate
 
  ````
 

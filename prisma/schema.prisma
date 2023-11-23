@@ -9,3 +9,12 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+//creamos una tabla de model 
+model Todo {
+  id          String   @id @default(uuid())
+  description String
+  complete    Boolean  @default(false)
+  creareAt    DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -9,7 +9,13 @@ docker compose up -
 3. Reemplazar las variables de entorno
 4. Ejcutar el comando  ```npm install```
 5. Ejecutar el comando ```npm run dev```
-6. Ejecutar el SEED para [crear la  base de datos de manera local] (http://localhost:3000/api/seed)
+6. ejecutar estos comando de prima
+    ```
+         npx prisma migrate dev
+         npx prisma generate
+
+    ```
+7. Ejecutar el SEED para [crear la  base de datos de manera local] (http://localhost:3000/api/seed)
  # Prisma commands
  ````
  npx prisma init

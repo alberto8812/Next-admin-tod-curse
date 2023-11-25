@@ -1,4 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images:{
+    remotePatterns:[
+        {
+            protocol:'https',
+            hostname:'tailus.io'
+        },
+        {
+          protocol:'https',
+          hostname:'www.w3.org'
+        }
+    ]
+  }
+
+}
 
 module.exports = nextConfig

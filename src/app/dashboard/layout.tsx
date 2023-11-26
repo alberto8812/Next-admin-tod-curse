@@ -9,37 +9,20 @@ export default function DashboardLayout({
 }) {
   return (
     <>
-      {/* TODO: src/components <Sidebar /> */}
-      <Sidebar/>
-
-      {/*TODO: Fin del <Sidebar /> */}
     
-      
-      {/* Main Layout content - Contenido principal del Layout */}
+      <Sidebar/>
       <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] min-h-screen">
-        
-        {/* TODO: src/components <TopMenu /> */}
+      <TopMenu/>
 
-        {/* TODO: Fin del <TopMenu /> */}
-        <TopMenu/>
-        {/* TODO: Contenido en el Layout.tsx */}
-        <div className="px-6 pt-6">
-
-
-          {/* TODO: dashboard/page.tsx  */}
-          {/* Este contenido va dentro de page.tsx */}
+      <div className="px-6 pt-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             
-            {/* TODO: src/components <WidgetItem /> */}
-              <WidgetItem/>
-            {/* TODO: Fin <WidgetItem /> */}
+             {
+              children
+             }
 
-          </div>  
-          {/* TODO: fin del dashboard/page.tsx  */}
+           </div>  
 
-
-
-        {/* TODO: Fin del contenido en el Layout.tsx */}
         </div>
       </div>
     </>

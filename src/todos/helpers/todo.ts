@@ -17,3 +17,30 @@ export const updateTodo=async(id:string,complete:boolean):Promise<Todo | void>=>
     return dbTodo;
 
 }
+export const createTodo=async(description:string):Promise<Todo | void>=>{
+
+    const body={description};//todo lo que quiero mandar en mi petucion
+
+    const dbTodo:any= await fetch(`/api/todo`,{
+        method:'POST',
+        body:JSON.stringify(body),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }).then(res=>res.json);
+
+    return dbTodo;
+
+}
+
+export const deleteTodos=async():Promise<boolean>=>{
+
+   const todo=await fetch('/api/todo',{
+        method:'DELETE',
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }).then(res=>res.json);
+   
+    return true;
+}

@@ -1,8 +1,11 @@
 'use client'
-import Image from "next/image"
 import { FC } from "react"
+import Image from "next/image"
+import { Start } from "./Start";
+
 import { IoAddCircleOutline, IoTrashOutline } from "react-icons/io5"
-import { Start } from "./start";
+import { addProductToCart, deleteProductToCart } from "@/shopping-cart/actions/actions"
+import { useRouter } from "next/navigation";
 
 
 
@@ -15,6 +18,17 @@ interface Props{
 }
 
 export const ProductCard:FC <Props> = ({id,name,price,rating,image}) => {
+  const router= useRouter()
+
+  const onAddToCard=()=>{
+    addProductToCart(id)
+    router.refresh();
+  }
+
+  const onDeleteToCard=()=>{
+    deleteProductToCart(id)
+    router.refresh();
+  }
   return (
     <div className="bg-white shadow rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-100">
       
@@ -58,10 +72,12 @@ export const ProductCard:FC <Props> = ({id,name,price,rating,image}) => {
         
         <div className="flex">
           <button
+           onClick={()=>onAddToCard()}
             className="text-white mr-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
               <IoAddCircleOutline size={25} />
           </button>
           <button
+          onClick={onDeleteToCard}
             className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
               <IoTrashOutline size={20} />
           </button>

@@ -1,6 +1,7 @@
 // Admin Dashboard https://tailwindcomponents.com/component/dashboard-12
 import { Sidebar, TopMenu, WidgetItem } from '@/components';
 import { CiBellOn, CiBookmarkCheck, CiChat1, CiLogout, CiMenuBurger, CiSearch } from 'react-icons/ci';
+import { AuthPorivider } from '../auth';
 
 export default function DashboardLayout({
   children
@@ -15,10 +16,11 @@ export default function DashboardLayout({
       <TopMenu/>
 
       <div className="px-6 pt-6 bg-white p-2 m-2 rounded pb-5">
-        
+        <AuthPorivider>
              {
               children
              }
+        </AuthPorivider>
 
      
 
